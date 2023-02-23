@@ -16,6 +16,7 @@
             if target doesn't already exist.
 
         Optional keys:
+        - device: Comma separated list of devices, the link is maintained on (omit, or '*' for all).
         - keep_origin: Keeps the directory-link path untouched.
         - hide_link: If $true, hides the directory-link path.
 
