@@ -61,6 +61,7 @@ function Update-DirectoryLinksFromHashTable {
     param (
         # Configuration data hashtable to create the directory mappings.
         [Parameter(Mandatory)]
+        [ValidateNotNull()]
         [hashtable] $ConfigurationTable
     )
     # ToDo: make private
@@ -116,5 +117,7 @@ function Update-SymbolicLinks {
     # read configuration file
     $configurationTable = Read-Configuration($ConfigFile)
     # execute!
-    Update-DirectoryLinksFromHashTable($configurationTable)
+    if ($configurationTable) {
+        Update-DirectoryLinksFromHashTable($configurationTable)
+    }
 }
